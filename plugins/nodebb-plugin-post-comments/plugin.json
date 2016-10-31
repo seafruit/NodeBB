@@ -1,0 +1,16 @@
+{
+  "id": "nodebb-plugin-post-comments",
+  "name": "Manage Comments for Post",
+  "description": "anage Comments for Post",
+  "url": "-",
+  "library": "./library.js",
+  "hooks": [
+    { "hook": "filter:scripts.get", "method": "addScripts" }
+  ],
+  "staticDirs": {
+    "lib": "public/lib"
+  },
+  "scripts": [
+    "public/lib/main.js"
+  ]
+}

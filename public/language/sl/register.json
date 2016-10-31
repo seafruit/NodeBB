@@ -1,0 +1,23 @@
+{
+    "register": "Registracija",
+    "cancel_registration": "Preklic registracije",
+    "help.email": "Privzeto bo vaš e-poštni naslov skrit pred javnostjo.",
+    "help.username_restrictions": "Enolično uporabniško ime med %1 in %2 znaki. Drugi vas lahko omenijo v objavi z @<span id='yourUsername'>uporabnik</span>.",
+    "help.minimum_password_length": "Vaše geslo mora vsebovati najmanj %1 znakov.",
+    "email_address": "E-poštni naslov",
+    "email_address_placeholder": "Vnesi e-mail naslov",
+    "username": "Uporabniško ime",
+    "username_placeholder": "Vnesi uporabniško ime",
+    "password": "Geslo",
+    "password_placeholder": "Vnesi geslo",
+    "confirm_password": "Potrdi geslo",
+    "confirm_password_placeholder": "Potrdi geslo",
+    "register_now_button": "Registriraj se",
+    "alternative_registration": "Alternativna registracija",
+    "terms_of_use": "Pogoji uporabe",
+    "agree_to_terms_of_use": "Strinjam se s pogoji uporabe",
+    "terms_of_use_error": "S pogoji uporabe se morate strinjati",
+    "registration-added-to-queue": "Registracija uporabniškega profila je v postopku. Ob potrditvi s strani skrbnika boste prejeli sporočilo v vaš e-poštni predal.",
+    "interstitial.intro": "Preden ustvarimo vaš račun zahtevamo nekaj dodatnih informacij.",
+    "interstitial.errors-found": "Vaše registracije ne moremo dokončati:"
+}
