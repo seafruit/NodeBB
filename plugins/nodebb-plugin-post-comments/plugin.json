@@ -5,12 +5,16 @@
   "url": "-",
   "library": "./library.js",
   "hooks": [
-    { "hook": "filter:scripts.get", "method": "addScripts" }
+    { "hook": "filter:scripts.get", "method": "addScripts" },
+    { "hook": "filter:post.getPosts", "method":"getPosts" },
+    { "hook": "filter:meta.getLinkTags", "method": "addPrefetchTags" }
   ],
   "staticDirs": {
-    "lib": "public/lib"
+    "lib": "./public/lib"
   },
   "scripts": [
-    "public/lib/main.js"
-  ]
+    "./public/lib/main.js",
+    "./public/lib/getPosts.js"
+  ],
+  "templates": "./public/lib/templates"
 }
