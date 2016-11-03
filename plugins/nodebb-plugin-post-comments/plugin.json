@@ -16,5 +16,7 @@
     "./public/lib/main.js",
     "./public/lib/getPosts.js"
   ],
-  "templates": "./public/lib/templates"
+  "less":[
+    "./public/less/getPost.less"
+  ]
 }

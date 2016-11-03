@@ -9,8 +9,5 @@
 		console.log("------------------------");
 		callback(null, postsData);
 	};
-
-
-
 	module.exports = comments;
 }(module));

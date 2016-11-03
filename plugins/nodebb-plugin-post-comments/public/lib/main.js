@@ -22,5 +22,5 @@
 "use strict";
 
 (function() {
-	//console.log('nodebb-plugin-quickstart: loaded');
+	console.log('this is main.js');
 }());
