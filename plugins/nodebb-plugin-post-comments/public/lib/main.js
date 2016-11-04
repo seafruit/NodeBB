@@ -22,5 +22,5 @@
 "use strict";
 
 (function() {
-	console.log('this is main.js');
+
 }());
