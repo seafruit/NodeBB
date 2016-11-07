@@ -1,13 +1,26 @@
 "use strict";
 
 (function () {
+	$.ajax({
+		type: "POST",
+		url: '/savecomment',
+		data: {tid: 33},
+		dataType: 'json',
+		success: function (result) {
+			alert(result);
+		},
+		error: function (err) {
+			console.log('error');
+		}
 
-	var writer_div = '<div><button class="writeCom" >我要说一句</button></div>' +
-		'<div class="commentInputArea"><input /><button>发表</button></div>';
-
-	//-------------------------------------------------------------------------------------------
+	});
 
 	$(window).on('action:topic.loading', function (ev, data) {
+		add_toggle();
+		getComments();
+	});
+
+	function add_toggle(){
 		var comment_a = '<a class="flip"><i class="comAreadisplay">收起</i><i class="comAreaHide" style="display:none;">展开</i></a>';
 		$('.post-tools').append(comment_a);
 		$(".flip").click(function () {
@@ -15,8 +28,7 @@
 			current_panel.slideToggle("slow");
 			$(this).children('i').toggle();
 		});
-		getComments();
-	});
+	}
 
 	function getComments() {
 		$.ajax({
@@ -44,12 +56,13 @@
 	};
 
 	function getPagePosts(postData) {
+		var writer_div = '<div><button class="writeCom" >我要说一句</button></div>' +
+			'<div class="commentInputArea"><input /><button class="com_submit">发表</button></div>';
 		for(var i=0;i<postData.length;i++){
 			if(postData[i].hasOwnProperty("comments")){
 				var data_pid = postData[i].pid;
 				var comments = postData[i].comments;
 				var comment_area = '<div class="panel"><ul class="comments_ul">'+addComments(comments)+'</ul>'+writer_div+'</div>';
-
 				$('[data-pid=' + data_pid + ']').find('.post-footer').after(comment_area);
 			}
 		}
@@ -62,6 +75,7 @@
 		}
 		return comment_li;
 	}
+
 }());
 
 
