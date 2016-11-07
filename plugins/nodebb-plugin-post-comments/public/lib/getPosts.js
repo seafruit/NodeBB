@@ -2,8 +2,7 @@
 
 (function () {
 
-
-	var writer_div = '<button class="writeCom" >我要说一句</button>' +
+	var writer_div = '<div><button class="writeCom" >我要说一句</button></div>' +
 		'<div class="commentInputArea"><input /><button>发表</button></div>';
 
 	//-------------------------------------------------------------------------------------------
@@ -12,10 +11,9 @@
 		var comment_a = '<a class="flip"><i class="comAreadisplay">收起</i><i class="comAreaHide" style="display:none;">展开</i></a>';
 		$('.post-tools').append(comment_a);
 		$(".flip").click(function () {
-			$(".panel").slideToggle("slow");
-			$(".comAreadisplay").toggle();
-			$(".comAreaHide").toggle();
-			$('.commentInputArea').css('display', 'none');
+			var current_panel = $(this).closest('div').next();
+			current_panel.slideToggle("slow");
+			$(this).children('i').toggle();
 		});
 		getComments();
 	});
@@ -30,12 +28,12 @@
 				var src =  $.parseJSON(result);
 				getPagePosts(src.posts);
 
-				$(".panel").after(writer_div);
 				$(".writeCom").click(function () {
-					if ($('.commentInputArea').css("display") === 'block') {
-						$('.commentInputArea').css('display', 'none');
+					var next = $(this).parent().next();
+					if (next.css("display") === 'block') {
+						next.css('display', 'none');
 					} else {
-						$('.commentInputArea').css('display', 'block');
+						next.css('display', 'block');
 					}
 				});
 			},
@@ -46,16 +44,12 @@
 	};
 
 	function getPagePosts(postData) {
-		console.log(postData.length);
 		for(var i=0;i<postData.length;i++){
-
-			var isExit = postData[i].hasOwnProperty("comments");
-			var data_pid = postData[i].pid;
-			if(isExit){
+			if(postData[i].hasOwnProperty("comments")){
+				var data_pid = postData[i].pid;
 				var comments = postData[i].comments;
-				var comment_area = '<div class="panel"><ul class="comments_ul">'+addComments(comments)+'</ul></div>';
+				var comment_area = '<div class="panel"><ul class="comments_ul">'+addComments(comments)+'</ul>'+writer_div+'</div>';
 
-				console.log(comment_area);
 				$('[data-pid=' + data_pid + ']').find('.post-footer').after(comment_area);
 			}
 		}
