@@ -15,7 +15,8 @@
   },
   "scripts": [
     "./public/lib/main.js",
-    "./public/lib/getPosts.js"
+    "./public/lib/getPosts.js",
+    "./public/db/save-comments.js"
   ],
   "less":[
     "./public/less/getPost.less"

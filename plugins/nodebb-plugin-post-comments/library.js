@@ -1,3 +1,4 @@
+var db_save = require('./public/db/save-comments');
 (function(module) {
 	"use strict";
 	var bodyParser = require('body-parser');
@@ -10,8 +11,15 @@
 			// middleware = params.middleware,
 			// controllers = params.controllers;
 		app.post('/posts',function(req,res){
-			// console.log(posts);
 			res.json(JSON.stringify(posts));
+		});
+		app.post('/save/comment',function(req,res){
+			var pid = req.body.pid;
+			var com_id = findCommentId(pid, posts.posts);
+
+			db_save.saveComment(req.body, com_id, function (result) {
+				res.status(201).json({value: '保存评论成功！'});
+			});
 		});
 		callback();
 	};
@@ -22,16 +30,20 @@
 	};
 
 	comments.getPosts = function(postsData,callback) {
-		// app.post('/post/getComments',function(req,res) {
-		// 	res.json(JSON.stringify(postsData));
-		// });
 		posts = postsData;
 		callback(null, postsData);
 	};
-    //
-	// comments.getPostsId = function (req, res, callback) {
-	// 	res.json(JSON.stringify(posts.posts));
-	// };
+
+	function findCommentId(pid, posts) {
+		for (var post of posts) {
+			if (!post.hasOwnProperty("comments")) {
+				return 0;
+			}
+			if (post.pid == pid) {
+				return post.comments.length;
+			}
+		}
+	}
 
 	module.exports = comments;
 }(module));

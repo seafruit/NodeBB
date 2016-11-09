@@ -16,7 +16,6 @@ db.objects.update({"pid": 33}, {
 			"com_id": 2,
 			"com_content": "我是33号post的第一条回复！"
 		}
-
 	}
 });
 

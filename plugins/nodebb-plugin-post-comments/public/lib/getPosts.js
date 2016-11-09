@@ -1,23 +1,11 @@
 "use strict";
 
 (function () {
-	$.ajax({
-		type: "POST",
-		url: '/savecomment',
-		data: {tid: 33},
-		dataType: 'json',
-		success: function (result) {
-			alert(result);
-		},
-		error: function (err) {
-			console.log('error');
-		}
-
-	});
 
 	$(window).on('action:topic.loading', function (ev, data) {
 		add_toggle();
 		getComments();
+
 	});
 
 	function add_toggle(){
@@ -39,15 +27,7 @@
 			success: function (result) {
 				var src =  $.parseJSON(result);
 				getPagePosts(src.posts);
-
-				$(".writeCom").click(function () {
-					var next = $(this).parent().next();
-					if (next.css("display") === 'block') {
-						next.css('display', 'none');
-					} else {
-						next.css('display', 'block');
-					}
-				});
+				click_action();
 			},
 			error: function (err) {
 				console.log('error');
@@ -74,6 +54,33 @@
 			comment_li += '<li >' + comments_data[k].com_content + '</li>';
 		}
 		return comment_li;
+	};
+
+	function click_action(){
+		$('.com_submit').click(function(){
+			$.ajax({
+				type: "POST",
+				url: '/save/comment',
+				data: {'pid':32,'com_content':'海浪无声将夜幕深深淹没，漫过天空尽头的角落。'},
+				dataType: 'json',
+				success: function (result) {
+					console.log('22222222222222');
+				},
+				error: function (err) {
+					console.log('error');
+				}
+
+			});
+		});
+
+		$(".writeCom").click(function () {
+			var next = $(this).parent().next();
+			if (next.css("display") === 'block') {
+				next.css('display', 'none');
+			} else {
+				next.css('display', 'block');
+			}
+		});
 	}
 
 }());
