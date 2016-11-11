@@ -1,22 +1,17 @@
 {
   "id": "nodebb-plugin-post-comments",
-  "name": "Manage Comments for Post",
-  "description": "anage Comments for Post",
-  "url": "-",
   "library": "./library.js",
   "hooks": [
-    { "hook": "static:app.load", "method": "init" },
     { "hook": "filter:scripts.get", "method": "addScripts" },
-    { "hook": "filter:post.getPosts", "method":"getPosts" },
-    { "hook": "filter:meta.getLinkTags", "method": "addPrefetchTags" }
+    { "hook": "static:app.load", "method": "init" },
+    { "hook": "filter:post.getPosts", "method": "showPosts" }
   ],
   "staticDirs": {
-    "lib": "./public/lib"
+    "lib": "public/lib"
   },
-  "scripts": [
+  "scripts":[
     "./public/lib/main.js",
-    "./public/lib/getPosts.js",
-    "./public/db/save-comments.js"
+    "./public/db/db-posts.js"
   ],
   "less":[
     "./public/less/getPost.less"
