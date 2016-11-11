@@ -4,6 +4,7 @@ var db_post = require('./public/db/db-posts');
 	"use strict";
 	var bodyParser = require('body-parser');
 	var posts, comments = {};
+	var newPostpid;
 
 	comments.init = function (params, callback) {
 
@@ -14,13 +15,21 @@ var db_post = require('./public/db/db-posts');
 		});
 
 		app.post("/save/comment", function (req, res) {
+			console.log('zheshishenme');
 			var pid = req.body.pid;
+			console.log(pid+'+++++++++++++++++++++++++=');
 			var com_id = findCommentId(pid, posts.posts);
 
 			db_post.saveComment(req.body, com_id, function (result) {
 				res.status(201).json({value: '保存评论成功！'});
 			})
 		});
+
+		app.post('/reply/newpost', function (req, res) {
+			console.log(newPostpid);
+			res.json(JSON.stringify(newPostpid));
+		});
+
 		callback();
 	};
 
@@ -38,15 +47,20 @@ var db_post = require('./public/db/db-posts');
 		}
 	}
 
-	comments.addScripts = function (scripts, callback) {
-		callback(null, scripts);
-	};
-
 	comments.showPosts = function (postsData, callback) {
-
 		posts = postsData;
 		callback(null, postsData);
 	};
+
+
+	comments.replyNewPost = function (data,callback){
+		console.log(data);
+		newPostpid = data.pid;
+		callback(null,data);
+	};
+
+
+
 
 	module.exports = comments;
 }(module));

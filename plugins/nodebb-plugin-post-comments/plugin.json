@@ -2,9 +2,9 @@
   "id": "nodebb-plugin-post-comments",
   "library": "./library.js",
   "hooks": [
-    { "hook": "filter:scripts.get", "method": "addScripts" },
     { "hook": "static:app.load", "method": "init" },
-    { "hook": "filter:post.getPosts", "method": "showPosts" }
+    { "hook": "filter:post.getPosts", "method": "showPosts" },
+    { "hook": "filter:post.save", "method": "replyNewPost" }
   ],
   "staticDirs": {
     "lib": "public/lib"
