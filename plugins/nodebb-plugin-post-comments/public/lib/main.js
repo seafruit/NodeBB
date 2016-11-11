@@ -156,7 +156,7 @@
 				setTimeout(function () {
 					var comments = add_comment_data('', data_pid) + add_writer(data_pid);
 					$('[data-pid=' + data_pid + ']').find('.post-footer').after(comments);
-				}, 1000
+				}, 1000);
 			},
 			error: function (err) {
 				console.log('err');
