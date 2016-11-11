@@ -60,7 +60,7 @@
 	}
 
 	function add_write_comment_event() {
-		$('#content').on('click','.comment-write',function(){
+		$('#content').on('click', '.comment-write', function () {
 			var next = $(this).parent().next();
 			if (next.css("display") === 'block') {
 				next.css('display', 'none');
@@ -70,14 +70,14 @@
 		});
 	};
 
-	function add_writer(data_pid){
+	function add_writer(data_pid) {
 		var writer_div =
 			'<div>' +
-			'	<button class="comment-write" data-pid="'+data_pid+'">我要说一句</button>' +
+			'	<button class="comment-write" data-pid="' + data_pid + '">我要说一句</button>' +
 			'</div>' +
-			'<div class="comment-input-area" data-pid="'+data_pid+'">' +
-			'	<input data-pid="'+data_pid+'"/>' +
-			'	<button class="comment-submit" data-pid="'+data_pid+'">发表</button>' +
+			'<div class="comment-input-area" data-pid="' + data_pid + '">' +
+			'	<input data-pid="' + data_pid + '"/>' +
+			'	<button class="comment-submit" data-pid="' + data_pid + '">发表</button>' +
 			'</div>';
 		return writer_div;
 	}
@@ -90,10 +90,10 @@
 			if (postData[i].hasOwnProperty("comments")) {
 
 				var comments = postData[i].comments;
-				comment_area += add_comment_data(add_comments(comments),data_pid);
+				comment_area += add_comment_data(add_comments(comments), data_pid);
 				add_toggle(data_pid);
 			} else {
-				comment_area += add_comment_data('',data_pid);
+				comment_area += add_comment_data('', data_pid);
 			}
 			comment_area += add_writer(data_pid);
 			$('[data-pid=' + data_pid + ']').find('.post-footer').after(comment_area);
@@ -101,12 +101,12 @@
 		flip_toggle();
 	}
 
-	function add_comment_data(data,data_pid) {
+	function add_comment_data(data, data_pid) {
 
 		var comment_area =
-			'<div class="panel" data-pid="'+data_pid+'">' +
-			'	<ul class="comments_ul" data-pid="'+data_pid+'">' +
-						data +
+			'<div class="panel" data-pid="' + data_pid + '">' +
+			'	<ul class="comments_ul" data-pid="' + data_pid + '">' +
+			data +
 			'	</ul>' +
 			'</div>';
 		return comment_area;
@@ -145,24 +145,20 @@
 	}
 
 
-
-	$(window).on('popstate', function() {
+	$(window).on('popstate', function () {
 		alert($('li').length);
 		$.ajax({
-			type:"post",
-			url:'/reply/newpost',
-			dataType:'json',
-			success:function(result){
+			type: "post",
+			url: '/reply/newpost',
+			dataType: 'json',
+			success: function (result) {
 				var data_pid = $.parseJSON(result);
-				setTimeout(function(){
-
-					var comments = add_comment_data('',data_pid)+ add_writer(data_pid);
-					$('[data-pid='+data_pid+']').find('.post-footer').after(comments);
-				},1000);
-
-
+				setTimeout(function () {
+					var comments = add_comment_data('', data_pid) + add_writer(data_pid);
+					$('[data-pid=' + data_pid + ']').find('.post-footer').after(comments);
+				}, 1000
 			},
-			error:function(err){
+			error: function (err) {
 				console.log('err');
 			}
 		});

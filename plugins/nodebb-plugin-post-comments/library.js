@@ -15,9 +15,7 @@ var db_post = require('./public/db/db-posts');
 		});
 
 		app.post("/save/comment", function (req, res) {
-			console.log('zheshishenme');
 			var pid = req.body.pid;
-			console.log(pid+'+++++++++++++++++++++++++=');
 			var com_id = findCommentId(pid, posts.posts);
 
 			db_post.saveComment(req.body, com_id, function (result) {
@@ -39,7 +37,7 @@ var db_post = require('./public/db/db-posts');
 			if (post.pid == pid) {
 				if (!post.hasOwnProperty("comments")) {
 					return 0;
-				}else {
+				} else {
 					return post.comments.length;
 				}
 
@@ -52,15 +50,11 @@ var db_post = require('./public/db/db-posts');
 		callback(null, postsData);
 	};
 
-
-	comments.replyNewPost = function (data,callback){
+	comments.replyNewPost = function (data, callback) {
 		console.log(data);
 		newPostpid = data.pid;
-		callback(null,data);
+		callback(null, data);
 	};
-
-
-
 
 	module.exports = comments;
 }(module));
