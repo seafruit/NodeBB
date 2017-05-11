@@ -1,7 +1,7 @@
 var url = "mongodb://localhost:27017/nodebb";
 var MongoClient = require('mongodb').MongoClient;
 
-exports.saveComment = function (comment, com_id, callback) {
+exports.saveComment = function (comment,com_id, callback) {
 
 	MongoClient.connect(url, function (err, db) {
 
@@ -20,4 +20,4 @@ exports.saveComment = function (comment, com_id, callback) {
 				db.close()
 			});
 	})
-};
+}

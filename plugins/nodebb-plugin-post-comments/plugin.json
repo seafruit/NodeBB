@@ -1,10 +1,12 @@
 {
   "id": "nodebb-plugin-post-comments",
   "library": "./library.js",
+  "url": "https://github.com/twa-rs-demos/nodebb-plugin-post-comments",
   "hooks": [
+    { "hook": "filter:scripts.get", "method": "addScripts" },
     { "hook": "static:app.load", "method": "init" },
     { "hook": "filter:post.getPosts", "method": "showPosts" },
-    { "hook": "filter:post.save", "method": "replyNewPost" }
+    { "hook": "filter:post.save", "method": "createPost" }
   ],
   "staticDirs": {
     "lib": "public/lib"
@@ -17,3 +19,4 @@
     "./public/less/getPost.less"
   ]
 }
+
