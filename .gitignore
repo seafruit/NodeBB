@@ -18,14 +18,14 @@ provision.sh
 feeds/recent.rss
 .eslintcache
 
-logs/
+
 
 pidfile
 
 # templates
 /public/templates
 
-/public/uploads
+
 /public/sounds
 
 # compiled files
