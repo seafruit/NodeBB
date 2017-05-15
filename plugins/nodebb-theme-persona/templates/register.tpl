@@ -1,5 +1,3 @@
-<!-- IMPORT partials/breadcrumbs.tpl -->
-
 <div class="row register">
 	<div class="{register_window:spansize}">
 		<div class="register-block">
@@ -13,7 +11,7 @@
 					<div class="col-lg-8">
 						<input class="form-control" type="email" placeholder="[[register:email_address_placeholder]]" name="email" id="email" autocorrect="off" autocapitalize="off" />
 						<span class="register-feedback" id="email-notify"></span>
-						<span class="help-block">[[register:help.email]]</span>
+						<span class="help-block">Your email will be protected</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -29,7 +27,7 @@
 					<div class="col-lg-8">
 						<input class="form-control" type="password" placeholder="[[register:password_placeholder]]" name="password" id="password" />
 						<span class="register-feedback" id="password-notify"></span>
-						<span class="help-block">[[register:help.minimum_password_length, {minimumPasswordLength}]]</span>
+						<span class="help-block">Password's length must be at least 6 characters.</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -51,7 +49,7 @@
 
 				<div class="form-group">
 					<div class="col-lg-offset-4 col-lg-8">
-						<button class="btn btn-primary btn-lg btn-block" id="register" type="submit">[[register:register_now_button]]</button>
+						<button class="btn btn-primary btn-lg btn-block" id="register" type="submit">register</button>
 					</div>
 				</div>
 				<input id="referrer" type="hidden" name="referrer" value="" />

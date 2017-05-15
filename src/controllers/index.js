@@ -27,9 +27,18 @@ var Controllers = {
 	api: require('./api'),
 	admin: require('./admin'),
 	globalMods: require('./globalmods'),
-	sitemap: require('./sitemap')
+	sitemap: require('./sitemap'),
 };
+Controllers.oauth = function(req, res, next) {
+	// console.log(req);
+	console.log('--------------------------------------------------------------------------------------------------');
 
+	console.log(req.query);
+	console.log('--------------------------------------------------------------------------------------------------');
+	console.log(req.params);
+	res.sendStatus(200);
+
+};
 
 Controllers.home = function(req, res, next) {
 	var route = meta.config.homePageRoute || (meta.config.homePageCustom || '').replace(/^\/+/, '') || 'categories';

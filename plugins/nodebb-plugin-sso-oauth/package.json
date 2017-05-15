@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "nodebb-plugin-sso-oauth",
+        "scope": null,
+        "escapedName": "nodebb-plugin-sso-oauth",
+        "name": "nodebb-plugin-sso-oauth",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/yoyo/code/NodeBB/NodeBB"
+    ]
+  ],
+  "_cnpm_publish_time": 1483987736586,
+  "_from": "nodebb-plugin-sso-oauth@latest",
+  "_hasShrinkwrap": false,
+  "_id": "nodebb-plugin-sso-oauth@0.3.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/nodebb-plugin-sso-oauth",
+  "_nodeVersion": "6.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/nodebb-plugin-sso-oauth-0.3.2.tgz_1483987734563_0.2898852997459471"
+  },
+  "_npmUser": {
+    "name": "julianlam",
+    "email": "julian@designcreateplay.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "nodebb-plugin-sso-oauth",
+    "scope": null,
+    "escapedName": "nodebb-plugin-sso-oauth",
+    "name": "nodebb-plugin-sso-oauth",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/nodebb-plugin-sso-oauth/download/nodebb-plugin-sso-oauth-0.3.2.tgz",
+  "_shasum": "e909bc1b013c223fa7de55ae7cd347507ecae66f",
+  "_shrinkwrap": null,
+  "_spec": "nodebb-plugin-sso-oauth",
+  "_where": "/home/yoyo/code/NodeBB/NodeBB",
+  "author": {
+    "name": "Julian Lam",
+    "email": "julian@nodebb.org"
+  },
+  "bugs": {
+    "url": "https://github.com/julianlam/nodebb-plugin-sso-oauth/issues"
+  },
+  "dependencies": {
+    "passport-oauth": "~1.0.0"
+  },
+  "description": "NodeBB Generic OAuth SSO",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "e909bc1b013c223fa7de55ae7cd347507ecae66f",
+    "size": 4438,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/nodebb-plugin-sso-oauth/download/nodebb-plugin-sso-oauth-0.3.2.tgz"
+  },
+  "gitHead": "03dc0d3ea459762062b8a0e860f7f1f505cc817f",
+  "homepage": "https://github.com/julianlam/nodebb-plugin-sso-oauth#readme",
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "oauth",
+    "oauth2",
+    "sso",
+    "single sign on",
+    "login",
+    "registration"
+  ],
+  "license": "MIT",
+  "main": "library.js",
+  "maintainers": [
+    {
+      "name": "julianlam",
+      "email": "julian@designcreateplay.com"
+    }
+  ],
+  "name": "nodebb-plugin-sso-oauth",
+  "nbbpm": {
+    "compatibility": "^1.0.1",
+    "index": false
+  },
+  "optionalDependencies": {},
+  "publish_time": 1483987736586,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianlam/nodebb-plugin-sso-oauth.git"
+  },
+  "scripts": {},
+  "version": "0.3.2"
+}

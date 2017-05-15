@@ -13,7 +13,7 @@
 			<span class="topic-title" component="topic/title">{title}</span>
 		</h1>
 
-		<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted -->">[[topic:deleted_message]]</div>
+		<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted -->">delete alredy, just admin can see it</div>
 
 		<hr class="visible-xs" />
 

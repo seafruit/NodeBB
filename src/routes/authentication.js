@@ -44,12 +44,15 @@
 		}
 
 		plugins.fireHook('filter:auth.init', loginStrategies, function(err) {
+			console.log(loginStrategies,'------------------loginStrategies');
 			if (err) {
+				console.log('err');
 				winston.error('filter:auth.init - plugin failure');
 				return callback(err);
 			}
 
 			loginStrategies.forEach(function(strategy) {
+				// console.log(strategy.url,'---------------strategy-Url');
 				if (strategy.url) {
 					router.get(strategy.url, passport.authenticate(strategy.name, {
 						scope: strategy.scope,

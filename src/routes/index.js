@@ -19,6 +19,7 @@ var helpers = require('./helpers');
 
 var setupPageRoute = helpers.setupPageRoute;
 
+
 function mainRoutes(app, middleware, controllers) {
 	setupPageRoute(app, '/', middleware, [], controllers.home);
 
@@ -34,6 +35,7 @@ function mainRoutes(app, middleware, controllers) {
 	setupPageRoute(app, '/reset/:code?', middleware, [], controllers.reset);
 	setupPageRoute(app, '/tos', middleware, [], controllers.termsOfUse);
 
+	app.get('/oauth',controllers.oauth);
 	app.get('/ping', controllers.ping);
 	app.get('/sping', controllers.ping);
 }
@@ -85,11 +87,13 @@ module.exports = function(app, middleware, hotswapIds) {
 	var routers = [
 		express.Router(),	// plugin router
 		express.Router(),	// main app router
+		// express.Router(),	// auth router
 		express.Router()	// auth router
 	];
 	var router = routers[1];
 	var pluginRouter = routers[0];
 	var authRouter = routers[2];
+	// var oauthRouth = routers[3];
 	var relativePath = nconf.get('relative_path');
 	var ensureLoggedIn = require('connect-ensure-login');
 
@@ -137,7 +141,6 @@ module.exports = function(app, middleware, hotswapIds) {
 	if (process.env.NODE_ENV === 'development') {
 		require('./debug')(app, middleware, controllers);
 	}
-
 	app.use(middleware.privateUploads);
 	app.use(relativePath + '/language/:code', middleware.processLanguages);
 	app.use(relativePath, express.static(path.join(__dirname, '../../', 'public'), {
