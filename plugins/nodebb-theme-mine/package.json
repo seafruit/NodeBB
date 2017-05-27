@@ -1,0 +1,111 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "nodebb-theme-mine@4.1.58",
+        "scope": null,
+        "escapedName": "nodebb-theme-mine",
+        "name": "nodebb-theme-mine",
+        "rawSpec": "4.1.58",
+        "spec": "4.1.58",
+        "type": "version"
+      },
+      "/home/yoyo/code/NodeBB/NodeBB"
+    ]
+  ],
+  "_cnpm_publish_time": 1475997907285,
+  "_from": "nodebb-theme-mine@4.1.58",
+  "_hasShrinkwrap": false,
+  "_id": "nodebb-theme-mine@4.1.58",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/nodebb-theme-mine",
+  "_nodeVersion": "4.2.4",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/nodebb-theme-mine-4.1.58.tgz_1475997906627_0.04026118712499738"
+  },
+  "_npmUser": {
+    "name": "baris",
+    "email": "barisusakli@gmail.com"
+  },
+  "_npmVersion": "2.14.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "nodebb-theme-mine@4.1.58",
+    "scope": null,
+    "escapedName": "nodebb-theme-mine",
+    "name": "nodebb-theme-mine",
+    "rawSpec": "4.1.58",
+    "spec": "4.1.58",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/nodebb-theme-mine/download/nodebb-theme-mine-4.1.58.tgz",
+  "_shasum": "73bad19548e1a30ed0632c6be46532eb5fda4553",
+  "_shrinkwrap": null,
+  "_spec": "nodebb-theme-mine@4.1.58",
+  "_where": "/home/yoyo/code/NodeBB/NodeBB",
+  "bugs": {
+    "url": "https://github.com/psychobunny/nodebb-theme-mine/issues"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Rodrigues",
+      "email": "andrew@designcreateplay.com",
+      "url": "https://github.com/psychobunny"
+    },
+    {
+      "name": "Julian Lam",
+      "email": "julian@designcreateplay.com",
+      "url": "https://github.com/julianlam"
+    },
+    {
+      "name": "Barış Soner Uşaklı",
+      "email": "baris@designcreateplay.com",
+      "url": "https://github.com/barisusakli"
+    }
+  ],
+  "dependencies": {},
+  "description": "Persona theme for NodeBB",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "73bad19548e1a30ed0632c6be46532eb5fda4553",
+    "size": 161473,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/nodebb-theme-mine/download/nodebb-theme-mine-4.1.58.tgz"
+  },
+  "gitHead": "6335877a3c47750406470523c452b0e398740cd8",
+  "homepage": "https://github.com/psychobunny/nodebb-theme-mine#readme",
+  "keywords": [
+    "nodebb",
+    "theme",
+    "forum",
+    "bootstrap",
+    "responsive"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "theme.less",
+  "maintainers": [
+    {
+      "name": "baris",
+      "email": "barisusakli@gmail.com"
+    }
+  ],
+  "name": "nodebb-theme-mine",
+  "nbbpm": {
+    "compatibility": "^0.8.2 || ^0.9.0 || ^1.0.0"
+  },
+  "optionalDependencies": {},
+  "publish_time": 1475997907285,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {},
+  "version": "4.1.58"
+}

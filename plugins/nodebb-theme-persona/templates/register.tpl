@@ -11,7 +11,7 @@
 					<div class="col-lg-8">
 						<input class="form-control" type="email" placeholder="[[register:email_address_placeholder]]" name="email" id="email" autocorrect="off" autocapitalize="off" />
 						<span class="register-feedback" id="email-notify"></span>
-						<span class="help-block">Your email will be protected</span>
+						<span class="help-block">[[register:help.email]]</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -27,7 +27,7 @@
 					<div class="col-lg-8">
 						<input class="form-control" type="password" placeholder="[[register:password_placeholder]]" name="password" id="password" />
 						<span class="register-feedback" id="password-notify"></span>
-						<span class="help-block">Password's length must be at least 6 characters.</span>
+						<span class="help-block">[[register:help.minimum_password_length, {minimumPasswordLength}]]</span>
 					</div>
 				</div>
 				<div class="form-group">

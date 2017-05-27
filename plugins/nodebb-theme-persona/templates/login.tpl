@@ -26,9 +26,7 @@
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<div class="checkbox">
-							<label>
-								<input type="checkbox" name="remember" id="remember" checked /> [[login:remember_me]]
-							</label>
+
 						</div>
 					</div>
 				</div>
@@ -38,7 +36,6 @@
 						<!-- IF allowRegistration -->
 						<span>[[login:dont_have_account]] <a href="{config.relative_path}/register">[[register:register]]</a></span>
 						<!-- ENDIF allowRegistration -->
-						&nbsp; <a id="reset-link" href="{config.relative_path}/reset">[[login:forgot_password]]</a>
 					</div>
 				</div>
 			</form>
